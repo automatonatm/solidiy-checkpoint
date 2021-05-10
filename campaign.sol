@@ -1,3 +1,4 @@
+
 // SPDX-License-Identifier: GPL-3.0
 
 pragma solidity >=0.4.17 <0.7.0;
@@ -14,7 +15,8 @@ contract Campaign {
     Request[] public requests;
     address public manager;
     uint public minimumContribution;
-    address[] public approvers;
+   // address[] public approvers;
+   mapping(address => bool) public approvers;
     
     
     
@@ -31,8 +33,8 @@ contract Campaign {
     
     function contribute() public payable {
         require(msg.value > minimumContribution);
-        approvers.push(msg.sender);
-        
+        //approvers.push(msg.sender);
+        approvers[msg.sender] = true;
     }
     
     
