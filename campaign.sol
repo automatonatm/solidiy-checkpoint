@@ -1,6 +1,8 @@
 
 // SPDX-License-Identifier: GPL-3.0
 
+//Used version 5.0
+
 pragma solidity >=0.4.17 <0.7.0;
 
 
